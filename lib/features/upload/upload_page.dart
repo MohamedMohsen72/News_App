@@ -1,8 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:news_app/core/Utils/color.dart';
 import 'package:news_app/core/Utils/text_styles.dart';
 import 'package:news_app/core/network/local_storage.dart';
 import 'package:news_app/core/widget/custom_btm.dart';
@@ -10,7 +10,6 @@ import 'package:news_app/core/widget/custom_error_dialog.dart';
 import 'package:news_app/core/widget/nav-bar.dart';
 
 
-import '../../core/Utils/color.dart';
 
 String? path;
 String name = '';
@@ -54,7 +53,7 @@ class _UpdatePageState extends State<UploadPage> {
             radius: 75,
             backgroundImage: (path != null)
                 ? FileImage(File(path!)) as ImageProvider
-                : AssetImage('assets/person.png'),
+                : const AssetImage('assets/person.png'),
           ),
           const Gap(20),
           SizedBox(
@@ -62,7 +61,7 @@ class _UpdatePageState extends State<UploadPage> {
             height: 60,
             child: customBottom(
               onPressed: () {
-                uploadFromeCamera();
+                uploudFromeCamera();
               },
               text: 'Upload From Camera',
             ),
@@ -73,7 +72,7 @@ class _UpdatePageState extends State<UploadPage> {
             height: 60,
             child: customBottom(
               onPressed: () {
-                uploadFromeGalery();
+                uploudFromeGalery();
               },
               text: 'Upload From Galary',
             ),
@@ -123,7 +122,7 @@ class _UpdatePageState extends State<UploadPage> {
     );
   }
 
-  uploadFromeCamera() async {
+  uploudFromeCamera() async {
     var pickImage = await ImagePicker().pickImage(source: ImageSource.camera);
     if (pickImage != null) {
       setState(() {
@@ -132,7 +131,7 @@ class _UpdatePageState extends State<UploadPage> {
     }
   }
 
-  uploadFromeGalery() async {
+  uploudFromeGalery() async {
     var pikerImage = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pikerImage != null) {
       setState(() {

@@ -7,14 +7,14 @@ import 'package:news_app/features/upload/upload_page.dart';
 
 
 
-class SplashVeiw extends StatefulWidget {
-  const SplashVeiw({super.key});
+class SplashView extends StatefulWidget {
+  const SplashView({super.key});
 
   @override
-  State<SplashVeiw> createState() => _SplashVeiwState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashVeiwState extends State<SplashVeiw> {
+class _SplashViewState extends State<SplashView> {
  late bool isUpload;
   @override
   void initState() {
@@ -22,11 +22,11 @@ class _SplashVeiwState extends State<SplashVeiw> {
     super.initState();
     setState(() {
       AppLocal.getCachData(AppLocal.ISUPLOAD_KEY).then((value) => isUpload=value??false);
-      Future.delayed(Duration(seconds: 6),() {
+      Future.delayed(const Duration(seconds: 6),() {
         return
 
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>
-          isUpload? NavBar() :UploadPage(),));
+          isUpload? const NavBar() :const UploadPage(),));
     });
 
     },);
@@ -39,9 +39,9 @@ class _SplashVeiwState extends State<SplashVeiw> {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          Image(image: AssetImage('assets/splash.png')),
+          const Image(image: AssetImage('assets/splash.png')),
           Text('Insights News', style: getTextTitle(fontWeight: FontWeight.w400)),
-          Gap(20),
+          const Gap(20),
           Text(
             'Stay Informed, Anytime, Anywhere.',
             style: getTextsmall(),

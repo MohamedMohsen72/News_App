@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: AppColor.balckColor),
             appBarTheme: AppBarTheme(backgroundColor: AppColor.balckColor),
             scaffoldBackgroundColor: AppColor.balckColor,),
-        home: SplashVeiw(),
+        home: SplashView(),
       ),
     );
   }

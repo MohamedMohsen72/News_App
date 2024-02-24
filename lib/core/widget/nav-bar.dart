@@ -6,6 +6,7 @@ import 'package:news_app/features/source/source_page.dart';
 
 import 'package:news_app/features/profile/profile_page.dart';
 import 'package:news_app/features/search/search_page.dart';
+import 'package:news_app/features/upload/upload_page.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
